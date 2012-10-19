@@ -1,0 +1,13 @@
+This is the details of the poll you selected. <br>
+
+
+<h1>{{ poll.question }}</h1>
+<ul>
+    {% for choice in poll.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+</ul>
+
+<p> And, here is a picture of me:
+<br><img src = "http://graph.facebook.com/zachary.dennett/picture">
+<br> because I was in the mood to figure out HTML images
