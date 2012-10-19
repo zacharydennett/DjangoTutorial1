@@ -1,9 +1,11 @@
+{% load url from future %} <!-- This is needed since i'm using version of Django before 1.5--> 
+
 <b><i> Index view of latest polls </b></i>
 
 {% if latest_poll_list %}
 <ul>
     {% for poll in latest_poll_list %}
-    <li><a href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
+    <li><a href="{% url 'polls:detail' poll.id %}">{{ poll.question }}</a></li>
     {% endfor %}
 </ul>
 {% else %}
